@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Recent tweets from <%= @screen_name %>:</h1>
+
+    <% @tweets.each do |tweet| %>
+      <%= "#{tweet.message_created_at}: #{tweet.message}" %>
+    <% end %>
+  </body>
+</html>
+

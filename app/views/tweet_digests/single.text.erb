@@ -1,0 +1,6 @@
+Recent tweets from <%= @screen_name %>:
+---------------------------------------------
+
+<% @tweets.each do |tweet| %>
+  <%= "#{tweet.message_created_at}: #{tweet.message}" %>
+<% end %>

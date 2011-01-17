@@ -1,0 +1,3 @@
+<h1>Are you sure you want to unsubscribe from tweets by <%= @subscription.screen_name %>?</h1>
+
+<p><%= link_to 'Unsubscribe', subscription_url(@subscription), :confirm => 'Are you sure?', :method => :delete %></p>

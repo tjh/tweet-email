@@ -4,11 +4,14 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Recent tweets from <%= @screen_name %>:</h1>
+    <h1>Recent tweets from <%= @subscription.screen_name %></h1>
 
     <% @tweets.each do |tweet| %>
-      <%= "#{tweet.message_created_at}: #{tweet.message}" %>
+      <p><%= tweet.message %><br />
+        <span style="font-size:7pt"><%= tweet.message_created_at.to_s :long %></span></p>
     <% end %>
+
+    <p><%= link_to "Stop sending me emails with tweets from #{@subscription.screen_name}", edit_subscription_url(@subscription) %></p>
   </body>
 </html>
 

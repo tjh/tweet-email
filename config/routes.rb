@@ -1,6 +1,7 @@
 TwitterEmail::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  resources :subscriptions, :only => [:create, :show, :edit, :destroy]
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -49,6 +50,7 @@ TwitterEmail::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+  root :to => "Subscriptions#new"
 
   # See how all your routes lay out with "rake routes"
 

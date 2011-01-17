@@ -1,6 +1,10 @@
-Recent tweets from <%= @screen_name %>:
+Recent tweets from <%= @subscription.screen_name %>:
 ---------------------------------------------
 
 <% @tweets.each do |tweet| %>
-  <%= "#{tweet.message_created_at}: #{tweet.message}" %>
+  <%= "#{tweet.message_created_at.to_s(:long)}: #{tweet.message}" %>
 <% end %>
+
+To unsubscribe, click this link or paste it into your browser:
+
+<%= edit_subscription_url(@subscription) %>

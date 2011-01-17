@@ -1,0 +1,20 @@
+<h1>Subscribe to a Twitter user's tweets</h1>
+<p>Every hour or so, we'll send you an email with any new messages posted to Twitter</p>
+<%= form_for @subscription do |f| %>
+  <% if @subscription.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @subscription.errors.each do |field, msg| %>
+        <li><%= "#{field.to_s.capitalize} #{msg}" %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <ul id="form-fields">
+    <li>Screen name<br />
+      <%= f.text_field :screen_name %></li>
+    <li>Email<br />
+      <%= f.text_field :email %></li>
+    <li><%= f.submit 'Subscribe' %></li>
+  </ul>
+<% end %>

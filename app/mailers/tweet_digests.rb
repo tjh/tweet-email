@@ -1,5 +1,5 @@
 class TweetDigests < ActionMailer::Base
-  default :from => "sara@theharveys.org"
+  default :from => "Tweet Email <tim@literacy5.com>"
 
   def single(subscription, tweets)
     @tweets       = tweets
